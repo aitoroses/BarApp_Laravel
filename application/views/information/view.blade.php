@@ -13,7 +13,7 @@
 			</p>
 			{{ Form::open('information/delete', 'DELETE', array('class' => 'form')) }}
 			{{ Form::hidden('id', $information->id) }}
-			{{ Form::submit('Eliminar') }}
+			{{ Form::submit('Eliminar', array('class'=>'btn btn-danger'))}}
 			{{ Form::close() }}
 
 			

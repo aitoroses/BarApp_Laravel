@@ -4,7 +4,7 @@
 
 @section('content')
 <section id='content'>
-	<header><h1 class="small"> {{ $wine->name }} </h1><header>
+	<header><h1 class="small"> {{ $wine->name }} </h1></header>
 	<article class="text">
 		<p><em>Descripción:  </em>{{ $wine->description }} </p>
 		<p><em>Categoria: </em>{{ $wine->category }} </p>
@@ -20,7 +20,7 @@
 
 			{{ Form::open('wines/delete', 'DELETE', array('class' => 'form')) }}
 			{{ Form::hidden('id', $wine->id) }}
-			{{ Form::submit('Eliminar') }}
+			{{ Form::submit('Eliminar', array('class'=>'btn btn-danger'))}}
 			{{ Form::close() }}
 
 			

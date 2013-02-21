@@ -27,7 +27,7 @@
 			</p>
 			{{ Form::open('users/delete', 'DELETE', array('class' => 'form')) }}
 			{{ Form::hidden('id', $user->id) }}
-			{{ Form::submit('Eliminar') }}
+			{{ Form::submit('Eliminar', array('class'=>'btn btn-danger'))}}
 			{{ Form::close() }}
 		</div>
 		
