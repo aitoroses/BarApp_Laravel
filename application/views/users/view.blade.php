@@ -16,7 +16,7 @@
 			<em> {{ Form::label('type','Privilegios: ') }} </em>
 			{{ Form::select('type', array('administrador' => 'Administrador', 'normal' => 'Usuario', 'limitado' => 'Usuario limitado', 'excluido' => 'Usuario excluido'), $user->type) }}
 			{{ Form::hidden('id', $user->id) }}
-			{{ Form::submit('Guardar')}}
+			{{ Form::submit('Guardar', array('class'=>'btn btn-warning')) }}
 			{{ Form::close() }}
 		</p>
 		<p><small>Creado en: {{ $user->created_at }}</small></p>

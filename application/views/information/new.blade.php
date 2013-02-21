@@ -17,7 +17,7 @@
 	
 	<div class="buttons-float">
 		<p class="button">{{ HTML::link_to_route('information', 'Atras') }}</p>
-		{{ Form::submit('Añadir nuevo') }}
+		{{ Form::submit('Añadir nuevo', array('class'=>'btn btn-success')) }}
 	</div>
 	
 	{{ Form::close() }}

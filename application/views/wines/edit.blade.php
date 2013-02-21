@@ -35,7 +35,7 @@
 	</fieldset>
 	<div class="buttons-float">
 	<p class="button"> {{ HTML::link_to_route('wines_index', 'Atras') }}</p>
-	{{ Form::submit('Actualizar') }}	
+	{{ Form::submit('Actualizar', array('class'=>'btn btn-warning')) }}
 	{{ Form::hidden('id', $wine->id) }}
 	</div>
 	
