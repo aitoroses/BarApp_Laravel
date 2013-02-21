@@ -2,11 +2,11 @@
 
 @section('content')
 <section>
-	<header><h1 class="small"> {{ $information->title }} </h1><header>
+	<header><h1 class="small"> {{ $information->title }} </h1></header>
 	<article class="text">
 		<p> {{ $information->description }} </p>
 		<p><small>Ultima actualizacion: {{ $information->updated_at }}</small></p>
-		<p>
+		<div class="buttons-float">
 			<p class="button">
 				{{ HTML::link_to_route('information', 'Atras') }}
 				{{ HTML::link_to_route('edit_info', 'Editar', array($information->id)) }} 
@@ -17,7 +17,7 @@
 			{{ Form::close() }}
 
 			
-		</p>
+		</div>
 	</article>
 	<script type="text/javascript">
 			$('.form').submit(function(){

@@ -15,9 +15,10 @@
 		{{ Form::textarea('description', Input::old('description')) }}
 	</fieldset>
 	
-	<p class="button"> {{ Form::submit('Añadir nuevo') }}
-		{{ HTML::link_to_route('information', 'Atras') }}
-	</p>
+	<div class="buttons-float">
+		<p class="button">{{ HTML::link_to_route('information', 'Atras') }}</p>
+		{{ Form::submit('Añadir nuevo') }}
+	</div>
 	
 	{{ Form::close() }}
 

@@ -12,7 +12,7 @@
 		<p><em>Precio: </em><span class='important'>{{ $wine->price }} €</span></p>
 
 		<p><small>Ultima actualizacion: {{ $wine->updated_at }}</small></p>
-		<p>
+		<div class="buttons-float">
 			<p class="button">
 				{{ HTML::link_to_route('wines_index', 'Atras') }}
 				{{ HTML::link_to_route('edit_wine', 'Editar', array($wine->id)) }} 
@@ -24,7 +24,7 @@
 			{{ Form::close() }}
 
 			
-		</p>
+		</div>
 	</article>
 	<script type="text/javascript">
 			$('.form').submit(function(){

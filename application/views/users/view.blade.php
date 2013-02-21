@@ -4,7 +4,7 @@
 
 @section('content')
 <section id='content'>
-	<header><h1 class="small"> {{ $user->username }} </h1><header>
+	<header><h1 class="small"> {{ $user->username }} </h1></header>
 	<article class="text">
 
 		<!-- Comprobamos si existen errores -->
@@ -20,19 +20,17 @@
 			{{ Form::close() }}
 		</p>
 		<p><small>Creado en: {{ $user->created_at }}</small></p>
-		<p>
+		<div class="buttons-float">
 			<p class="button">
 				{{ HTML::link_to_route('users_index', 'Atras') }}
 				<!-- {{ HTML::link_to_route('users_edit', 'Editar', array($user->id)) }} -->
 			</p>
-
 			{{ Form::open('users/delete', 'DELETE', array('class' => 'form')) }}
 			{{ Form::hidden('id', $user->id) }}
 			{{ Form::submit('Eliminar') }}
 			{{ Form::close() }}
-
-			
-		</p>
+		</div>
+		
 	</article>
 	<script type="text/javascript">
 			$('.form').submit(function(){

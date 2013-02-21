@@ -21,9 +21,10 @@
 		{{ Form::select('type', array('administrador' => 'Administrador', 'normal' => 'Usuario', 'limitado' => 'Usuario limitado', 'excluido' => 'Usuario excluido'), Input::old('type')) }}
 	</fieldset>
 	
-	<p class="button"> {{ Form::submit('Añadir nuevo') }}
-		{{ HTML::link_to_route('users_index', 'Atras') }}
-	</p>
+	<div class="buttons-float">
+		<p class="button">{{ HTML::link_to_route('users_index', 'Atras') }}</p>
+		{{ Form::submit('Añadir nuevo') }}
+	</div>
 	
 	{{ Form::close() }}
 </section>

@@ -1,7 +1,12 @@
 <!DOCTYPE <html>
 <head>
 	<title>Bar Mô</title>
+	<!-- Load bootstrapper -->
+	{{ Asset::container('bootstrapper')->styles() }}
+	{{ Asset::container('bootstrapper')->scripts() }}
+	<!-- My Style -->
 	{{ HTML::style('css/style.css') }}
+	<!-- jQuery -->
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 </head>
 <body id="wrap">
@@ -24,7 +29,7 @@
 		$error = Session::get('error');
 	?>
 	<!-- Mensaje de confirmacion -->
-	<div class="container well" style="display:none">
+	<div class="container no-bs well" style="display:none">
 		<a href='#' id="message">
 			@if(isset($message))
 				<script type="text/javascript">
@@ -42,7 +47,7 @@
 		</a>
 	</div>
 	<!-- Mensaje de error -->
-	<div class="container wrong" style="display:none">
+	<div class="container no-bs wrong" style="display:none">
 		<a href='#' id="error-message">
 			@if(isset($error))
 				<script type="text/javascript">

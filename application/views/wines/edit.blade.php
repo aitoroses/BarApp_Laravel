@@ -33,11 +33,11 @@
 		{{ Form::label('image','Imagen del vino: ') }} <br />
 		{{ Form::file('image') }}
 	</fieldset>
-	
-	<p class="button"> {{ Form::submit('Actualizar') }}
-		{{ HTML::link_to_route('wines_index', 'Atras') }}
-		{{ Form::hidden('id', $wine->id) }}
-	</p>
+	<div class="buttons-float">
+	<p class="button"> {{ HTML::link_to_route('wines_index', 'Atras') }}</p>
+	{{ Form::submit('Actualizar') }}	
+	{{ Form::hidden('id', $wine->id) }}
+	</div>
 	
 	{{ Form::close() }}
 </section>

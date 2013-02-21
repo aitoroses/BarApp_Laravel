@@ -14,12 +14,11 @@
 		{{ Form::label('description','Descripción: ') }} <br />
 		{{ Form::textarea('description',$information->description) }}
 	</fieldset>
-	<p class="button">{{ HTML::link_to_route('information', 'Atras', array($information->id)) }}</p>
-	{{ Form::hidden('id', $information->id) }}
-	{{ Form::submit('Actualizar') }}
-
-	
-	
-	{{ Form::close() }}
+	<div class="buttons-float">
+		<p class="button">{{ HTML::link_to_route('information', 'Atras', array($information->id)) }}</p>
+		{{ Form::hidden('id', $information->id) }}
+		{{ Form::submit('Actualizar') }}
+		{{ Form::close() }}
+	</div>
 </section>
 @endsection
