@@ -6,9 +6,9 @@ class Users_Controller extends Base_Controller{
 
 	public static function get_index(){
 		
-		$users = User::all();
+		$users = User::order_by('username', 'asc')->get();
 
-		return View::make('users.index')
+		return View::make('users.table')
 			->with('users', $users);
 
 	}

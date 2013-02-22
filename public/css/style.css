@@ -314,7 +314,7 @@ h1.small {
 
 
 
-li.title a, li.title span , p.button a {
+li.title a, li.title span , p.button a{
 	margin: 10px 20px;
 	display: block; 
 	font: bold 14px/1.5em "DroidSansBold", Verdana, sans-serif;
@@ -322,6 +322,10 @@ li.title a, li.title span , p.button a {
 	cursor: 'pointer';
 	border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 	
+}
+
+tbody a{
+	color: #dc692e;
 }
 
 li.title a{
@@ -426,5 +430,8 @@ select {
 }
 .buttons-float button{
 	margin-top: 10px;
+}
+.margins-normal {
+	margin: 20px;
 }
 
