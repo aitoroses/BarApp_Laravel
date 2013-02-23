@@ -68,6 +68,7 @@
 
 	@yield('content')
 	@yield('picture')
+	@yield('comments')
 
 </body>
 </html>

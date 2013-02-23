@@ -192,8 +192,48 @@ section#picture img:hover{
 	transform: rotate(5deg);
 }
 
+/************************** Comments Section *********************************/
 
+section#comments{
+	margin-left: 20px;
+	width: 570px;
+}
+section#comments article {
+	border-bottom: 1px solid #d8d8d1;
+	margin: 10px 10px 10px 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+section#comments article:last-child{
+	border: none;
+}
+section#comments article header h1{
+	float: left;
+	margin: 10px;
+	width: 118px;
+	line-height: 1.5em;
+	font-weight: bold;
+}
+section#comments article header h2{
+	float: left;
+	width: 118px;
+	line-height: 1em;
+	margin-left: 10px;
+	margin-bottom: 10px;
+	color: #dc692e;
+	font-weight: bold;
+}
+section#comments article hgroup{
+	width: 50px;
+}
 
+section#comments article aside{
+	display: inline-block;
+	width: 380;
+	margin: 10px 0 10px 10px;
+	min-height: 58px;}
+
+/************************** Messages *********************************/
 .container{
 	margin-top: 20px;
 	margin-bottom: 20px;
@@ -326,6 +366,8 @@ li.title a, li.title span , p.button a{
 
 tbody a{
 	color: #dc692e;
+	font: bold 14px/1.5em "DroidSansBold", Verdana, sans-serif;
+	
 }
 
 li.title a{

@@ -14,9 +14,12 @@ class Wines_Controller extends Base_Controller{
 
 	public function get_view($id){
 
+		$wine = Wine::find($id);
+		$comments = Wine::find($id)->comments()->get();
 
 		return View::make('wines.view')
-			->with('wine', Wine::find($id));
+			->with('wine', $wine)
+			->with('comments', $comments);
 			
 	}
 

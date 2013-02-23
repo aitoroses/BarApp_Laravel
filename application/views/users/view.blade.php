@@ -10,7 +10,7 @@
 		<!-- Comprobamos si existen errores -->
 		{{ render('users.errors') }}
 
-		<p><em>Nombre:  </em>{{ $user->username }} </p>
+		<!-- <p><em>Nombre:  </em>{{ $user->username }} </p> -->
 		<p>
 			{{ Form::open('users/update','PUT',array('class' => '')) }}
 			<em> {{ Form::label('type','Privilegios: ') }} </em>
