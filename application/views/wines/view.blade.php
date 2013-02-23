@@ -52,7 +52,6 @@
 	<header><h1 class="small"> Comentarios </h1></header>
 	<!-- Comments -->
 	<ul>
-
 		@foreach($comments as $ele)
 		<article>
 			<header>
@@ -64,29 +63,6 @@
 			<aside>{{ $ele->comment }}</aside>
 		</article>
 		@endforeach
-		<article>
-			<header><h1>Primer comentario</h1></header>
-			<aside>Esta es la descripcion de este primer comentario y hay que hacer un poco de 
-				lorem impsum ñam ñam ñam ñam ñam ñam ñam ñam ñam ñam ñam ñam ñam ñam </aside>
-		</article>
-		<article>
-			<header>
-				<hgroup>
-					<h1>segundisimo comentario</h1>
-					<h2>Usuario1</h2>
-				</hgroup>
-			</header>
-			<aside>Esta es la descripcion de este segundisimo comentario y hay que hacer un poco de 
-				lorem impsum ñam ñam ñam ñam ñam ñam ñam ñam ñam ñam ñam ñam ñam ñam </aside>
-		</article>
-		<article>
-			<header><h1>tercer comentario</h1></header>
-			<aside>Esta es la descripcion de este tercer comentario y hay que hacer un poco de 
-				lorem impsum ñam ñam ñam ñam ñam ñam ñam ñam ñam ñam ñam ñam ñam ñam
-				 Esta es la descripcion de este tercer comentario y hay que hacer un poco de 
-				lorem impsum ñam ñam ñam ñam ñam ñam ñam ñam ñam ñam ñam ñam ñam ñam 
-			</aside>
-		</article>
 	</ul>
 	<!-- Buttons -->
 	<div>
