@@ -66,6 +66,9 @@ Route::put('/wines/update', array('uses'=>'wines@update'));
 Route::post('/wines/add_new', array('uses'=>'wines@addnew'));
 Route::delete('/wines/delete', array('as' => 'delete', 'uses' => 'wines@destroy'));
 
+// COMMENT ROUTES
+Route::delete('/comments/delete', array('uses' => 'comments@destroy'));
+
 // API
 Route::get('API/wines.json', array('uses' => 'api@wines'));
 Route::get('API/information.json', array('uses' => 'api@information'));

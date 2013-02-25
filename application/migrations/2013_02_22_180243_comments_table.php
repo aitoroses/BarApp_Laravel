@@ -12,7 +12,8 @@ class Comments_Table {
 		Schema::create('comments_table',function($table){
 			$table->increments('id');
 			$table->integer('wine_id');
-			$table->string('username');
+			$table->integer('user_id');
+			$table->string('title');
 			$table->text('comment');
 			$table->string('rating');
 			$table->timestamps();

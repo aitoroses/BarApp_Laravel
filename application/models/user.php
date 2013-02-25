@@ -21,6 +21,12 @@ class User extends Eloquent {
 	public static function validate_type($data){
 		return Validator::make($data, static::$rules_type);
 	}
+
+	public function comments(){
+
+		return $this->has_many('Comment');
+
+	}
 }
 
 ?>

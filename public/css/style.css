@@ -200,9 +200,22 @@ section#comments{
 }
 section#comments article {
 	border-bottom: 1px solid #d8d8d1;
-	margin: 10px 10px 10px 20px;
+	margin: 10px 10px 20px 20px;
 	padding-top: 10px;
 	padding-bottom: 10px;
+	-webkit-transition: all .2s ease-in-out;
+	-moz-transition: all .2s ease-in-out;
+	-o-transition: all .2s ease-in-out;
+	-ms-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;
+	border-radius: 10px;
+}
+section#comments article:hover {
+	background-color: #ece7dd;
+	margin-right: 20px;
+	-moz-box-shadow: 2px 2px 4px rgba(61, 61, 61, 0.25);
+	-webkit-box-shadow: 2px 2px 4px rgba(61, 61, 61, 0.25);
+	box-shadow: 2px 2px 4px rgba(61, 61, 61, 0.25);
 }
 section#comments article:last-child{
 	border: none;
@@ -217,11 +230,12 @@ section#comments article header h1{
 section#comments article header h2{
 	float: left;
 	width: 118px;
-	line-height: 1em;
+	/*line-height: 1em;*/
 	margin-left: 10px;
 	margin-bottom: 10px;
 	color: #dc692e;
 	font-weight: bold;
+	overflow: scroll;
 }
 section#comments article hgroup{
 	width: 50px;
@@ -231,8 +245,18 @@ section#comments article aside{
 	display: inline-block;
 	width: 380;
 	margin: 10px 0 10px 10px;
-	min-height: 58px;}
-
+	min-height: 58px;
+}
+section#comments article aside span {
+	float: right;
+	margin-top: 20px;
+	position: relative;
+	top: 15px;
+}
+section#comments article button {
+	float: right;
+	margin-top: 10px;
+}
 /************************** Messages *********************************/
 .container{
 	margin-top: 20px;
