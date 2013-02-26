@@ -209,6 +209,7 @@ section#comments article {
 	-ms-transition: all .2s ease-in-out;
 	transition: all .2s ease-in-out;
 	border-radius: 10px;
+	min-height: 150px;
 }
 section#comments article:hover {
 	background-color: #ece7dd;
@@ -236,6 +237,14 @@ section#comments article header h2{
 	color: #dc692e;
 	font-weight: bold;
 	overflow: scroll;
+}
+section#comments article header h3{
+	float: left;
+	margin-left: 10px;
+	width: 100px;
+}
+section#comments article header h3 img{
+	max-width: 20px;
 }
 section#comments article hgroup{
 	width: 50px;

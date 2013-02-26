@@ -15,7 +15,7 @@ class Comments_Table {
 			$table->integer('user_id');
 			$table->string('title');
 			$table->text('comment');
-			$table->string('rating');
+			$table->integer('rating');
 			$table->timestamps();
 		});
 	}
