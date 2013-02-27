@@ -63,4 +63,21 @@ class Api_Controller extends Base_Controller {
 
 	}
 
+	public function post_login(){
+
+		$user = Input::get('user');
+		$username = $user['username'];
+		$password = $user['password'];
+
+		$find = User::where_username($username)->first();
+
+		if(Hash::check($password, $find->password)){
+			return "valid";
+
+		} else {
+			return Response::error('500');
+		}
+
+	}
+
 }

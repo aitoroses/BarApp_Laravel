@@ -8,7 +8,6 @@
 	<article class="text">
 		<p><em>Descripción:  </em>{{ $wine->description }} </p>
 		<p><em>Categoria: </em>{{ $wine->category }} </p>
-		<p><em>Valoracion: </em>{{ $wine->rating }} </p>
 		<p><em>Precio: </em><span class='important'>{{ $wine->price }} €</span></p>
 
 		<p><small>Ultima actualizacion: {{ $wine->updated_at }}</small></p>

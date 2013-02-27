@@ -50,7 +50,7 @@ class Wines_Controller extends Base_Controller{
 			'name' => Input::get('name'),
 			'description' => Input::get('description'),
 			'category' => Input::get('category'),
-			'rating' => Input::get('rating'),
+			//'rating' => Input::get('rating'),
 			'price' => Input::get('price'),
 			'picture' => 'placeholder.jpg'
 
@@ -64,7 +64,7 @@ class Wines_Controller extends Base_Controller{
 			'name' => Input::get('name'),
 			'description' => Input::get('description'),
 			'category' => Input::get('category'),
-			'rating' => Input::get('rating'),
+			//'rating' => Input::get('rating'),
 			'price' => Input::get('price'),
 			'picture' => $picture['name']
 
@@ -103,7 +103,7 @@ class Wines_Controller extends Base_Controller{
 				'name' => Input::get('name'),
 				'description' => Input::get('description'),
 				'category' => Input::get('category'),
-				'rating' => Input::get('rating'),
+				//'rating' => Input::get('rating'),
 				'price' => Input::get('price')
 			));
 		} else {
@@ -114,7 +114,7 @@ class Wines_Controller extends Base_Controller{
 				'name' => Input::get('name'),
 				'description' => Input::get('description'),
 				'category' => Input::get('category'),
-				'rating' => Input::get('rating'),
+				//'rating' => Input::get('rating'),
 				'price' => Input::get('price'),
 				'picture' => $picture['name']
 			));

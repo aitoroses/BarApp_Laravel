@@ -22,10 +22,6 @@
 		{{ Form::select('category', array('Cosecha' => 'Cosecha', 'Crianza' => 'Crianza', 'Reserva' => 'Reserva', 'Gran Reserva' => 'Gran Reserva'), $wine->category) }}
 	</fieldset>
 	<fieldset>
-		{{ Form::label('rating','Valoracion: ') }} <br />
-		{{ Form::select('rating', array('Excelente' => 'Excelente', 'Muy Bueno' => 'Muy Bueno', 'Bueno' => 'Bueno', 'Aceptable' => 'Aceptable'), $wine->rating) }}
-	</fieldset>
-	<fieldset>
 		{{ Form::label('price','Precio: ') }} <br />
 		{{ Form::text('price', $wine->price) }}
 	</fieldset>

@@ -9,7 +9,7 @@
 		@endforeach
 	</ul>
 	<p class='button'> 
-		<!-- {{ HTML::link_to_route('create', 'Añadir') }} -->
+		{{ HTML::link_to_route('create', 'Añadir') }}
 		{{ HTML::link_to_route('logout', 'Salir') }}
 	</p>
 </section>

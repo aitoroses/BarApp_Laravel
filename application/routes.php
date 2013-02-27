@@ -72,7 +72,8 @@ Route::delete('/comments/delete', array('uses' => 'comments@destroy'));
 // API
 Route::get('API/wines.json', array('uses' => 'api@wines'));
 Route::get('API/information.json', array('uses' => 'api@information'));
-Route::post('API/register.php', array('uses' => 'api@register'));
+Route::post('API/register', array('uses' => 'api@register'));
+Route::post('API/login', array('uses' => 'api@login'));
 
 
 

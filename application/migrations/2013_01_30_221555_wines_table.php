@@ -14,7 +14,6 @@ class Wines_Table {
 			$table->string('name');
 			$table->text('description');
 			$table->string('category');
-			$table->string('rating');
 			$table->string('price');
 			$table->string('picture');
 			$table->string('thumb');

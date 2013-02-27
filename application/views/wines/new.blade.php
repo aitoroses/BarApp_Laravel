@@ -21,10 +21,6 @@
 		{{ Form::select('category', array('Cosecha' => 'Cosecha', 'Crianza' => 'Crianza', 'Reserva' => 'Reserva', 'Gran Reserva' => 'Gran Reserva'), Input::old('category')) }}
 	</fieldset>
 	<fieldset>
-		{{ Form::label('rating','Valoracion: ') }} <br />
-		{{ Form::select('rating', array('Excelente' => 'Excelente', 'Muy Bueno' => 'Muy Bueno', 'Bueno' => 'Bueno', 'Aceptable' => 'Aceptable'), Input::old('rating')) }}
-	</fieldset>
-	<fieldset>
 		{{ Form::label('price','Precio: ') }} <br />
 		{{ Form::text('price', Input::old('price')) }}
 	</fieldset>

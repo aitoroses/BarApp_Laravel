@@ -8,6 +8,7 @@
 	{{ HTML::style('css/style.css') }}
 	<!-- jQuery -->
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	{{ HTML::script('js/bootstrap.js') }}
 </head>
 <body id="wrap">
 <!-- BEGIN NAVIGATION -->		
@@ -16,9 +17,16 @@
 			<li>{{ HTML::link('/information', 'Principal') }}</li>
 			<li>{{ HTML::link('/users', 'Usuarios') }}</li>
 			<li>{{ HTML::link('/wines', 'Vinos') }}</li>
-			<li><a href="#">Pinchos</a></li>
-			<li><a href="#">Cervezas</a></li>
-			<li><a href="#">Catering</a></li>
+			<li><a class="disabled" data-toggle="popover" data-placement="bottom" data-content="Mantenimiento. Próximamente disponible." title="" data-original-title="Enlace deshabilitado" href="#">Pinchos</a></li>
+			<li><a class="disabled" data-toggle="popover" data-placement="bottom" data-content="Mantenimiento. Próximamente disponible." title="" data-original-title="Enlace deshabilitado" href="#">Gin Tonics</a></li>
+			<li><a class="disabled" data-toggle="popover" data-placement="bottom" data-content="Mantenimiento. Próximamente disponible." title="" data-original-title="Enlace deshabilitado" href="#">Nos Gusta</a></li>
+			<script type="text/javascript">
+				$('.disabled').popover();
+				$('.disabled').click(function(){
+					//alert('Enlace deshabilitado por mantenimiento');
+					$(this).popover();
+				});
+			</script>
 		</ul>
 	</nav>
 <!-- END NAVIGATION -->	
