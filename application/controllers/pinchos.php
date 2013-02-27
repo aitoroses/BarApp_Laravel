@@ -49,6 +49,7 @@ class Pinchos_Controller extends Base_Controller {
             Pincho::create(array(
             'name' => Input::get('name'),
             'description' => Input::get('description'),
+            'access' => Input::get('access'),
             'link' => Input::get('link'),
             'price' => Input::get('price'),
             'picture' => 'placeholder.jpg'
@@ -63,7 +64,7 @@ class Pinchos_Controller extends Base_Controller {
             'name' => Input::get('name'),
             'description' => Input::get('description'),
             'link' => Input::get('link'),
-            //'rating' => Input::get('rating'),
+            'access' => Input::get('access'),
             'price' => Input::get('price'),
             'picture' => $picture['name']
 
@@ -103,7 +104,7 @@ class Pinchos_Controller extends Base_Controller {
                 'name' => Input::get('name'),
                 'description' => Input::get('description'),
                 'link' => Input::get('link'),
-                //'rating' => Input::get('rating'),
+                'access' => Input::get('access'),
                 'price' => Input::get('price')
             ));
         } else {
@@ -114,7 +115,7 @@ class Pinchos_Controller extends Base_Controller {
                 'name' => Input::get('name'),
                 'description' => Input::get('description'),
                 'link' => Input::get('link'),
-                //'rating' => Input::get('rating'),
+                'access' => Input::get('access'),
                 'price' => Input::get('price'),
                 'picture' => $picture['name']
             ));
