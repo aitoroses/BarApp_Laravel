@@ -1,0 +1,1 @@
+This is the /Applications/MAMP/htdocs/laravel/application/views/pinchos/view.blade.php view
