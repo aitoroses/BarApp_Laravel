@@ -1,8 +1,7 @@
 @layout('layouts.default')
 
 @section('content')
-<section id='content
-'>
+<section id='content'>
 	<h1 class="titulo"> Editando {{ $wine->name }}</h1>
 	{{ Form::open_for_files('wines/update', 'PUT', array('class' => "form")) }}
 

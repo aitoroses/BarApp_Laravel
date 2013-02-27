@@ -36,6 +36,24 @@ class Add_Comments {
 			'created_at' => date('y-m-d H:m:s'),
 			'updated_at' => date('y-m-d H:m:s')
 		));
+		DB::table('comments_table')->insert(array(
+			'pincho_id' => '1',
+			'user_id' => '2',
+			'title' => 'titulo 3',
+			'comment' => 'Un comentario para el airbag de pollo',
+			'rating' => '1',
+			'created_at' => date('y-m-d H:m:s'),
+			'updated_at' => date('y-m-d H:m:s')
+		));
+		DB::table('comments_table')->insert(array(
+			'gin_id' => '1',
+			'user_id' => '2',
+			'title' => 'gintonic?',
+			'comment' => 'Un comentario para el gintonic',
+			'rating' => '2',
+			'created_at' => date('y-m-d H:m:s'),
+			'updated_at' => date('y-m-d H:m:s')
+		));
 	}
 
 	/**

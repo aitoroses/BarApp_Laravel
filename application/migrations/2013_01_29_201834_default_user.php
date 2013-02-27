@@ -28,8 +28,8 @@ class Default_User {
 		));
 
 		DB::table('user_table')->insert(array(
-			'username' => 'admin',
-			'password' => Hash::make('aitor.oses@gmail.com'),
+			'username' => 'aitor.oses@gmail.com',
+			'password' => Hash::make('raiden400'),
 			'type' => 'normal',
 			'picture' => 'placeholder.jpg',
 			'created_at' => date('y-m-d H:m:s'),

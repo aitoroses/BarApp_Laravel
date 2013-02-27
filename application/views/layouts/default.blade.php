@@ -17,8 +17,8 @@
 			<li>{{ HTML::link('/information', 'Principal') }}</li>
 			<li>{{ HTML::link('/users', 'Usuarios') }}</li>
 			<li>{{ HTML::link('/wines', 'Vinos') }}</li>
-			<li><a class="disabled" data-toggle="popover" data-placement="bottom" data-content="Mantenimiento. Próximamente disponible." title="" data-original-title="Enlace deshabilitado" href="#">Pinchos</a></li>
-			<li><a class="disabled" data-toggle="popover" data-placement="bottom" data-content="Mantenimiento. Próximamente disponible." title="" data-original-title="Enlace deshabilitado" href="#">Gin Tonics</a></li>
+			<li>{{ HTML::link('/pinchos', 'Pinchos') }}</li>
+			<li>{{ HTML::link('/gins', 'Gin tonics') }}</li>
 			<li><a class="disabled" data-toggle="popover" data-placement="bottom" data-content="Mantenimiento. Próximamente disponible." title="" data-original-title="Enlace deshabilitado" href="#">Nos Gusta</a></li>
 			<script type="text/javascript">
 				$('.disabled').popover();

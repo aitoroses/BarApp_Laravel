@@ -198,8 +198,9 @@ section#picture img:hover{
 /************************** Comments Section *********************************/
 
 section#comments{
-	margin-left: 20px;
 	width: 570px;
+	float: right;
+	margin-left: 20px;
 }
 section#comments article {
 	border-bottom: 1px solid #d8d8d1;

@@ -66,6 +66,26 @@ Route::put('/wines/update', array('uses'=>'wines@update'));
 Route::post('/wines/add_new', array('uses'=>'wines@addnew'));
 Route::delete('/wines/delete', array('as' => 'delete', 'uses' => 'wines@destroy'));
 
+// PINCHO ROUTES
+
+Route::get('/pinchos', array('as' => 'index_pinchos','uses'=>'pinchos@index', 'before' => 'auth'));
+Route::get('/pinchos/(:any)', array('as'=>'pincho', 'uses'=>'pinchos@view', 'before' => 'auth'));
+Route::get('/pinchos/create', array('as' => 'create_pincho', 'uses'=>'pinchos@create', 'before' => 'auth'));
+Route::get('/pinchos/(:any)/edit', array('as'=>'edit_pincho', 'uses'=>'pinchos@edit', 'before' => 'auth'));
+Route::put('/pinchos/update', array('uses'=>'pinchos@update'));
+Route::post('/pinchos/add', array('uses'=>'pinchos@add'));
+Route::delete('/pinchos/delete', array('uses' => 'pinchos@destroy'));
+
+// GIN ROUTES
+
+Route::get('/gins', array('as' => 'index_gins','uses'=>'gins@index', 'before' => 'auth'));
+Route::get('/gins/(:any)', array('as'=>'gin', 'uses'=>'gins@view', 'before' => 'auth'));
+Route::get('/gins/create', array('as' => 'create_gin', 'uses'=>'gins@create', 'before' => 'auth'));
+Route::get('/gins/(:any)/edit', array('as'=>'edit_gin', 'uses'=>'gins@edit', 'before' => 'auth'));
+Route::put('/gins/update', array('uses'=>'gins@update'));
+Route::post('/gins/add', array('uses'=>'gins@add'));
+Route::delete('/gins/delete', array('uses' => 'gins@destroy'));
+
 // COMMENT ROUTES
 Route::delete('/comments/delete', array('uses' => 'comments@destroy'));
 

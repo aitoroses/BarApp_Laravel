@@ -1,24 +1,20 @@
 @layout('layouts.default')
 
-<!-- CONTENT SECTION -->
-
 @section('content')
 <section id='content'>
-	<header><h1 class="small"> {{ $wine->name }} </h1></header>
+	<header><h1 class="small"> {{ $data->name }} </h1></header>
 	<article class="text">
-		<p><em>Descripción:  </em>{{ $wine->description }} </p>
-		<p><em>Categoria: </em>{{ $wine->category }} </p>
-		<p><em>Precio: </em><span class='important'>{{ $wine->price }} €</span></p>
-
-		<p><small>Ultima actualizacion: {{ $wine->updated_at }}</small></p>
+		<p><em>Descripción:  </em>{{ $data->description }} </p>
+		<p><em>Precio: </em><span class='important'>{{ $data->price }} €</span></p>
+		<p><small>Ultima actualizacion: {{ $data->updated_at }}</small></p>
 		<div class="buttons-float">
 			<p class="button">
-				{{ HTML::link_to_route('wines_index', 'Atras') }}
-				{{ HTML::link_to_route('edit_wine', 'Editar', array($wine->id)) }} 
+				{{ HTML::link_to_route('index_gins', 'Atras') }}
+				{{ HTML::link_to_route('edit_gin', 'Editar', array($data->id)) }} 
 			</p>
 
-			{{ Form::open('wines/delete', 'DELETE', array('class' => 'form')) }}
-			{{ Form::hidden('id', $wine->id) }}
+			{{ Form::open('gins/delete', 'DELETE', array('class' => 'form')) }}
+			{{ Form::hidden('id', $data->id) }}
 			{{ Form::submit('Eliminar', array('class'=>'btn btn-danger'))}}
 			{{ Form::close() }}
 
@@ -41,7 +37,7 @@
 
 @section('picture')
 <section id='picture'>
-	{{ HTML::image('img/wines/'.$wine->picture) }}
+	{{ HTML::image('img/gins/'.$data->picture) }}
 
 </section>
 @endsection

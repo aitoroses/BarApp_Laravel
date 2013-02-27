@@ -1,8 +1,8 @@
 <?php
 
-class Pincho extends Eloquent 
+class Gin extends Eloquent 
 {
-		public static $table = "pinchos_table";
+		public static $table = "gin_table";
 
 		public static $rules = array(
 		'name' => 'required|min:3',
@@ -20,5 +20,4 @@ class Pincho extends Eloquent
 		return $this->has_many('Comment');
 
 	}
-
 }
