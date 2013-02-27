@@ -35,6 +35,14 @@ class Default_User {
 			'created_at' => date('y-m-d H:m:s'),
 			'updated_at' => date('y-m-d H:m:s')
 		));
+		DB::table('user_table')->insert(array(
+			'username' => 'jaime',
+			'password' => Hash::make('jaime'),
+			'type' => 'administrador',
+			'picture' => 'placeholder.jpg',
+			'created_at' => date('y-m-d H:m:s'),
+			'updated_at' => date('y-m-d H:m:s')
+		));
 	}
 
 	/**

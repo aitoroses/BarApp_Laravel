@@ -86,6 +86,16 @@ Route::put('/gins/update', array('uses'=>'gins@update'));
 Route::post('/gins/add', array('uses'=>'gins@add'));
 Route::delete('/gins/delete', array('uses' => 'gins@destroy'));
 
+// LIKE ROUTES
+
+Route::get('/likes', array('as' => 'index_likes','uses'=>'likes@index', 'before' => 'auth'));
+Route::get('/likes/(:any)', array('as'=>'like', 'uses'=>'likes@view', 'before' => 'auth'));
+Route::get('/likes/create', array('as' => 'create_like', 'uses'=>'likes@create', 'before' => 'auth'));
+Route::get('/likes/(:any)/edit', array('as'=>'edit_like', 'uses'=>'likes@edit', 'before' => 'auth'));
+Route::put('/likes/update', array('uses'=>'likes@update'));
+Route::post('/likes/add', array('uses'=>'likes@add'));
+Route::delete('/likes/delete', array('uses' => 'likes@destroy'));
+
 // COMMENT ROUTES
 Route::delete('/comments/delete', array('uses' => 'comments@destroy'));
 

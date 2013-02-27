@@ -14,6 +14,7 @@ class Comments_Table {
 			$table->integer('wine_id');
 			$table->integer('pincho_id');
 			$table->integer('gin_id');
+			$table->integer('like_id');
 			$table->integer('user_id');
 			$table->string('title');
 			$table->text('comment');

@@ -54,6 +54,15 @@ class Add_Comments {
 			'created_at' => date('y-m-d H:m:s'),
 			'updated_at' => date('y-m-d H:m:s')
 		));
+		DB::table('comments_table')->insert(array(
+			'like_id' => '1',
+			'user_id' => '2',
+			'title' => 'gintonic?',
+			'comment' => 'Un comentario para el like',
+			'rating' => '2',
+			'created_at' => date('y-m-d H:m:s'),
+			'updated_at' => date('y-m-d H:m:s')
+		));
 	}
 
 	/**

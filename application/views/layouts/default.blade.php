@@ -19,7 +19,7 @@
 			<li>{{ HTML::link('/wines', 'Vinos') }}</li>
 			<li>{{ HTML::link('/pinchos', 'Pinchos') }}</li>
 			<li>{{ HTML::link('/gins', 'Gin tonics') }}</li>
-			<li><a class="disabled" data-toggle="popover" data-placement="bottom" data-content="Mantenimiento. Próximamente disponible." title="" data-original-title="Enlace deshabilitado" href="#">Nos Gusta</a></li>
+			<li>{{ HTML::link('/likes', 'Nos gusta') }}</li>
 			<script type="text/javascript">
 				$('.disabled').popover();
 				$('.disabled').click(function(){
