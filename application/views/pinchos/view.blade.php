@@ -6,6 +6,7 @@
 	<article class="text">
 		<p><em>Descripción:  </em>{{ $data->description }} </p>
 		<p><em>Enlace:  </em>{{ $data->link }} </p>
+		<p><em>Acceso:  </em>{{ $data->access }} </p>
 
 		<p><em>Precio: </em><span class='important'>{{ $data->price }} €</span></p>
 

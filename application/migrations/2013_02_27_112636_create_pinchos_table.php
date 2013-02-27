@@ -8,6 +8,7 @@ class Create_Pinchos_Table {
 			$table->increments('id');
 			$table->string('name');
 			$table->text('description');
+			$table->string('access');
 			$table->string('link');
 			$table->string('price');
 			$table->string('picture');

@@ -17,6 +17,10 @@
 		{{ Form::textarea('description', $data->description) }}
 	</fieldset>
 	<fieldset>
+		{{ Form::label('access','Tipo de acceso: ') }} <br />
+		{{ Form::select('access', array('Registrado' => 'Registrado', 'Sin registrar' => 'Sin registrar'), $data->access) }}
+	</fieldset>
+	<fieldset>
 		{{ Form::label('link','Enlace: ') }} <br />
 		{{ Form::text('link', $data->link) }}
 	</fieldset>

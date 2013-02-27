@@ -21,6 +21,10 @@
 		{{ Form::text('link', Input::old('link')) }}
 	</fieldset>
 	<fieldset>
+		{{ Form::label('access','Tipo de acceso: ') }} <br />
+		{{ Form::select('access', array('Registrado' => 'Registrado', 'Sin registrar' => 'Sin registrar'), Input::old('description')) }}
+	</fieldset>
+	<fieldset>
 		{{ Form::label('price','Precio: ') }} <br />
 		{{ Form::text('price', Input::old('price')) }}
 	</fieldset>
