@@ -37,6 +37,18 @@ class Api_Controller extends Base_Controller {
 
 	}
 
+	public function get_likes(){
+
+		return Response::eloquent(Like::all());
+
+	}
+
+	public function get_like($id){
+
+		return Response::eloquent(Like::find($id));
+
+	}
+
 	public function post_register(){
 
 		$user = Input::get('user');

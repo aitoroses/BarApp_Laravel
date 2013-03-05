@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Responsive HTML5/CSS3 template</title>
+	<meta charset="utf-8" />
+	<meta name = "viewport" content = "width=device-width, maximum-scale = 1, minimum-scale=1" />
+	<link rel="stylesheet" type="text/css" href="css/default.css" media="all" />
+	<link rel="stylesheet" href="css/flexslider.css" type="text/css" />
+	<link rel="stylesheet" href="css/fixed-navigation.css" type="text/css" />
+	<link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css' />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script src="js/jquery.flexslider.js"></script>
+	<script src="js/default.js"></script>
+	<script type="text/javascript"
+	    src="https://maps.google.com/maps/api/js?sensor=false">
+	</script>
+	<script type="text/javascript">
+	  function initialize() {
+	    var latlng = new google.maps.LatLng(42.816268, -1.641845);
+	    var myOptions = {
+	      zoom: 19,
+	      center: latlng,
+	      mapTypeId: google.maps.MapTypeId.ROADMAP
+	    };
+	    var map = new google.maps.Map(document.getElementById("map_canvas"),
+	        myOptions);
+	  }
+
+	</script>
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<script src="js/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body onload="initialize()">
+	<div id="start">
+		<header id="header" style="position: relative;">
+
+			<div class="center">
+				<p style="color: #fff;text-align:center;font-size: 1em;"><-- Desliza el dedo --></p>
+				<nav id="mainNav" style="display: none;">
+					<ul>
+						<li class="active"><a id="nav1" href="#start"><span>Mô</span></a></li>
+						<li><a id="nav2" href="#descripcion"><span>Descripción</span></a></li>
+						<li><a id="nav3" href="#carta"><span>Nuestra Carta</span></a></li>
+						<li><a id="nav4" href="#horario"><span>Horario</span></a></li>
+						<li><a id="nav5" href="#map"><span>Contactanos</span></a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+		<div id="content">
+			<section class="row">
+				<div class="center">
+					<!-- <h1>Bar Mô</h1> -->
+					<!-- <strong class="subHeading">works well on Desktops, Tablets, and Mobile Phones</strong> -->
+					<div class="gallery">
+						<img src="img/bar-mo.jpg" alt="image" />
+						<!-- <ul class="slides">
+							<li><img src="img/bar-mo.jpg" alt="image" /></li>
+						</ul> -->
+					</div>
+				</div>
+			</section>
+			<section class="row grey">
+				<div class="center">
+					<h1 id="descripcion">Descripción</h1>
+					<!-- <strong class="subHeading">lorem ipsum dolor sit amet, consectetur adipiscing elit</strong> -->
+					<div class="columns">
+						<div class="half">
+							<div class="imgHolder"><img src="img/bar-mo-1.jpg" alt="image" /></div>
+							<p id="descriptionLabel">El Bar Mô es un nuevo concepto de local situado en el centro de Pamplona.
+							Decorado con gusto, el Bar Mô te ofrece un ambiente cálido con variedad de pinchos, cafés y una divertida selección de vinos. Además, nuestra música lounge y de vanguardia hará de tu estancia una experiencia única.</p>							
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="row">
+				<div class="center">
+					<h1>Nuestra Carta</h1>
+					<!-- <strong class="subHeading">lorem ipsum dolor sit amet, consectetur adipiscing elit</strong> -->
+					<div class="columns">
+						<div class="oneThird">
+							<div id="carta" class="imgHolder fullWidth"><img src="img/bar-mo-2.jpg" alt="image" /></div>
+							<p id="chartLabel">Nuestra carta te ofrece los pinchos y tapas más actuales, innovando y renovándolas constantemente. Disponemos de fritos, tostas, raciones y brochetas.
+							Bar Mô te ofrece una moderna carta de vinos para que acompañes tus pinchos. Si prefieres tomar un café, prueba uno de nuestros Nespressos.
+							Especialistas en gin tonics, el ambiente cálido está garantizado con la música lounge y de vanguardia.</p>
+						</div>
+					</div>
+				</div>
+			</section>
+			
+			<section class="row grey">
+				<div class="center">
+					<h1>Horario</h1>
+					<!-- <strong class="subHeading">lorem ipsum dolor sit amet, consectetur adipiscing elit</strong> -->
+					<div class="columns">
+						<div class="half">
+							<div  id="horario" class="imgHolder"><img src="img/bar-mo-3.jpg" alt="image" /></div>
+							<p id="timeLabel">Abrimos a las 8:00 de lunes a viernes, sábado y domingo a las 11:00</p>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section id="contactUs" class="row">
+				<div class="center">
+					<!-- <h1>Contactanos</h1> -->
+					<!-- <strong class="subHeading">lorem ipsum dolor sit amet, consectetur adipiscing elit</strong> -->
+					<div class="columns">
+						<!-- <div class="half">
+							<form action="#" class="form center">
+								<fieldset>
+									<h2>Feedback form</h2>
+									<div class="formRow">
+										<div class="textField"><input type="text" placeholder="Tu nombre ..." /></div>	
+									</div>
+									<div class="formRow">
+										<div class="textField"><input type="text" placeholder="Tu Email ..." /></div>
+									</div>
+									<div class="formRow">
+										<div class="textField"><textarea cols="20" rows="4" placeholder="Mensaje ..."></textarea></div>
+									</div>
+									<div class="formRow">
+										<button class="btnSmall btn submit right">
+											<span>Send Message</span>
+										</button>
+									</div>
+								</fieldset>
+							</form>
+						</div> -->
+						<div class="half">
+							<h1>Encuentranos</h1>
+							<p style="text-align: center;">Al lado del hotel Europa</p>	
+							<div id="map">
+								<div class="imgHolder"><div id="map_canvas" style="width:445px; height:392px"></div></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+		<footer id="footer">
+			<!-- <div class="center">
+				<span class="copy">Created by <a href="http://webcodebuilder.com">WebCodeBuilder.com</a></span>
+				Subscribe to our <a href="http://webcodebuilder.com/feed/">blog</a> and follow us on <a href="https://twitter.com/#!/webcodebuilder">Twitter</a>
+			</div> -->
+		</footer>
+	</div>
+</body>
+<script type="text/javascript">
+
+	document.body.style.webkitUserSelect='none';
+
+	function navigate(selector){
+		$(selector).trigger('click');
+	}
+	function change(selector, data){
+		$(selector).text(data);
+	};
+</script>
+</html>
