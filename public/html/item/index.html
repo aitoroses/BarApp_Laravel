@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<head>
+	<title>Mô</title>
+	<meta charset="utf-8" />
+	<meta name = "viewport" content = "width=device-width, maximum-scale = 1, minimum-scale=1" />
+	<script src="js/underscore-min.js"></script>
+	<script src="js/zepto.min.js"></script>
+	<script src="js/backbone-min.js"></script>
+	<script src="js/scripts.js" charset="utf-8"></script>
+	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+</head>
+<body>
+
+	<div id="wrapper">
+		
+		<header id="header">
+			<h1>Header</h1>
+		</header>
+		<section id="main">
+			<div id="content">
+				<h1 class="title">Título</h1>
+				<div class="container">
+					<div class="pic"><img src="img/default.jpg"></div>
+					<div class="info">
+						This is info Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat praesentium laboriosam reprehenderit quas doloremque facere modi quia perspiciatis placeat repellendus velit harum natus voluptates impedit vero optio blanditiis! Unde nihil!
+					</div>
+				</div>
+				<div class="description">
+					<h1 class="minihead">Descripción</h1>
+					<p>
+						This is description Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam cupiditate asperiores et porro iure accusantium officia! Est eos aliquid illum doloremque iste maxime dolores laboriosam possimus cumque quasi autem delectus!
+					</p>
+				</div>
+			    
+			</div>
+		</section>
+		<section id="comments">
+			<h1 class="minihead">Comentarios</h1>
+			<article id="comment-template" style="display:none">
+				<div class="container">
+					<div class="column-one">
+						<h1><%= name %></h1>	
+					</div>
+					<div class="column-two">
+						<%= comment %>
+					</div>
+				</div>
+			</article>
+			<article style="display:none">
+				<div class="container">
+					<div class="column-one">
+						<h1>Lorem</h1>
+						<img src="img/star.png" alt="img">
+						<img src="img/star.png" alt="img">
+						<img src="img/star.png" alt="img">
+						<img src="img/star.png" alt="img">
+						<img src="img/star.png" alt="img">	
+					</div>
+					<div class="column-two">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo maiores totam animi aliquam rerum quo dicta fugit quae tenetur provident doloribus numquam iure corporis? Architecto dolores molestiae quo incidunt culpa.
+					</div>
+				</div>
+			</article>
+		</section>
+		<footer id="footer">
+			<div class="container">
+				<h1 class="minihead">Haz un comentario</h1>
+				<input id="user" type="hidden" value="">
+				<textarea id="textarea" class="text container"></textarea>
+				
+				<div class="container">
+					<div class="rating">
+						<div>1</div>
+						<div>2</div>
+						<div>3</div>
+						<div>4</div>
+						<div>5</div>
+					</div>
+					<div class="btn">Comentar</div>
+				</div>
+
+			</div>
+		</footer>
+
+	</div>
+
+</body>
+</html>

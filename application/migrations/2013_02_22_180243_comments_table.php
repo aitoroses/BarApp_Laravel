@@ -16,6 +16,7 @@ class Comments_Table {
 			$table->integer('gin_id');
 			$table->integer('like_id');
 			$table->integer('user_id');
+			$table->string('name');
 			$table->string('title');
 			$table->text('comment');
 			$table->integer('rating');

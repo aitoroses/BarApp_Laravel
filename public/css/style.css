@@ -67,9 +67,14 @@ body {
 }
 
 #wrap {
-	margin: 30px 0 0 90px ;
-	width: 960px;
+	margin: 30px 5% 0 5% ;
+	width: auto;
 	padding: 0;
+}
+@media all and (max-width: 640px) {
+	#wrap {
+		margin: 0px;
+	}
 }
 
 /* Prevent bootstrapp defaults for divs or stuff */
@@ -90,11 +95,11 @@ body {
 /**************** Navigation bar *************/
 
 #primary {
-	width: 100%;
-	height: 28px;
+	width: auto;
 	background-color: #fafaf6;
 	margin-bottom: 20px;
 	padding-top: 14px;
+	padding-bottom: 14px;
 	-webkit-box-shadow: 0px 1px 2px #ccc;
 	-moz-box-shadow: 0px 1px 2px #ccc;
 	box-shadow: 0px 1px 2px #ccc;
@@ -106,12 +111,12 @@ body {
 
 #primary ul li {
 	display: inline;
-	padding-left: 20px;
-	padding-right: 20px;
+	padding-left: 0%;
+	padding-right: 0%;
 }
 
 #primary li a {
-	padding: 5px 15px;
+	padding: 5px 5px;
 	color: #64645d;
 	text-shadow: 1px 1px 1px #fff;
 	-webkit-border-radius: 5px;
@@ -152,6 +157,11 @@ section {
 	-o-transition: box-shadow .3s ease-in-out;
 	-ms-transition: box-shadow .3s ease-in-out;
 	transition: box-shadow .3s ease-in-out;
+}
+@media screen and (max-width: 400px){
+	section {
+		width: 97%;
+	}
 }
 section:hover{
 	-webkit-box-shadow: 5px 5px 20px rgba(0, 0, 0, .4); 
@@ -194,7 +204,17 @@ section#picture img:hover{
 	-ms-transform: rotate(5deg);
 	transform: rotate(5deg);
 }
+@media screen and (max-width: 600px) {
+	section#picture {
+		margin: 0px 0px 40px 0px;
+		width: 97%;
 
+	}
+
+	section#picture img{
+		width: 92%;
+	}
+}
 /************************** Comments Section *********************************/
 
 section#comments{
@@ -202,6 +222,7 @@ section#comments{
 	float: right;
 	margin-left: 20px;
 }
+
 section#comments article {
 	border-bottom: 1px solid #d8d8d1;
 	margin: 10px 10px 20px 20px;
@@ -269,6 +290,19 @@ section#comments article aside span {
 section#comments article button {
 	float: right;
 	margin-top: 10px;
+}
+@media screen and (max-width: 600px) {
+	section#comments{
+		width: auto;
+		margin: 0px 0px 20px 2%;
+
+	}
+	section#comments article aside{
+		display: inline-block;
+		width: auto;
+		margin: 10px 0 10px 10px;
+		min-height: 58px;
+	}
 }
 /************************** Messages *********************************/
 .container{
@@ -513,4 +547,11 @@ select {
 .margins-normal {
 	margin: 20px;
 }
-
+@media (max-width: 600px){
+	p.button a {
+		margin-right: 5px;
+	}
+	.text p small {
+		padding-right: 0px;
+	}
+}

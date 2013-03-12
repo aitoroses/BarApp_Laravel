@@ -1,6 +1,7 @@
 <!DOCTYPE <html>
 <head>
 	<title>Bar Mô</title>
+	<meta name = "viewport" content = "width=device-width, maximum-scale = 1, minimum-scale=1" />
 	<!-- Load bootstrapper -->
 	{{ Asset::container('bootstrapper')->styles() }}
 	{{ Asset::container('bootstrapper')->scripts() }}

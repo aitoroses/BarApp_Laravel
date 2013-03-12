@@ -30,7 +30,7 @@ class Default_User {
 		DB::table('user_table')->insert(array(
 			'username' => 'aitor.oses@gmail.com',
 			'password' => Hash::make('raiden400'),
-			'type' => 'normal',
+			'type' => 'administrador',
 			'picture' => 'placeholder.jpg',
 			'created_at' => date('y-m-d H:m:s'),
 			'updated_at' => date('y-m-d H:m:s')

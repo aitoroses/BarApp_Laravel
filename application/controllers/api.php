@@ -8,32 +8,18 @@ class Api_Controller extends Base_Controller {
 
 		return Response::eloquent(Wine::all());
 
+	}
 
-		$result = [];
+	public function get_wine($id){
 
-		foreach (Wine::all() as $wine){
-
-			$result[] = $wine;
-			
-		}
-
-		return json_encode($result, JSON_UNESCAPED_UNICODE);
+		return Response::eloquent(Wine::find($id));
 
 	}
+
 
 	public function get_information(){
 
 		return Response::eloquent(Information::all());
-
-		$result = [];
-
-		foreach (Information::all() as $ele){
-
-			$result[] = $ele;
-			
-		}
-
-		return json(json_encode($result, JSON_UNESCAPED_UNICODE));
 
 	}
 
@@ -48,6 +34,22 @@ class Api_Controller extends Base_Controller {
 		return Response::eloquent(Like::find($id));
 
 	}
+
+	/*public function get_comments_wine($id){
+
+		return Response::eloquent(Comment::where('wine_id', '=', $id));	
+	}
+
+	public function post_comments_wine($id){
+
+
+	}*/
+
+/****************** USER ACTIONS *********************************/
+
+	
+
+
 
 	public function post_register(){
 
@@ -77,7 +79,7 @@ class Api_Controller extends Base_Controller {
 
 	public function post_login(){
 
-		$user = Input::get('user');
+		/*$user = Input::get('user');
 		$username = $user['username'];
 		$password = $user['password'];
 
@@ -87,6 +89,28 @@ class Api_Controller extends Base_Controller {
 			return "valid";
 
 		} else {
+			return Response::error('500');
+		}
+		*/
+
+		$username = $user['username'];
+		$password = $user['password'];
+
+		$credentials = array('username' => $username, 'password' => $password);
+
+		if (Auth::attempt($credentials)){
+			return Response::eloquent(Auth::user());
+		} else {
+			return Response::error('500');
+		}
+	}
+
+	public function get_check(){
+
+		if(Auth::check()){
+			return Response::eloquent(Auth::user());
+		}
+		else{
 			return Response::error('500');
 		}
 

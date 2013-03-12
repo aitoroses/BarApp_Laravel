@@ -1,0 +1,202 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain) */
+ 
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video
+  margin: 0
+  padding: 0
+  border: 0
+  font-size: 100%
+  font: inherit
+  vertical-align: baseline
+ 
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section
+  display: block
+ 
+body
+  line-height: 1
+ 
+ol, ul
+  list-style: none
+ 
+blockquote, q
+  quotes: none
+ 
+blockquote:before, blockquote:after,
+q:before, q:after
+  content: ''
+  content: none
+ 
+table
+  border-collapse: collapse
+  border-spacing: 0
+
+/************ END RESET **********************/
+
+@mixin gradientBackground($from, $to)
+  background: -webkit-linear-gradient($from, $to)
+  background: -moz-linear-gradient($from, $to)
+  background: -o-linear-gradient($from, $to)
+  background: linear-gradient($from, $to)
+
+@mixin boxSizing
+  $type: border-box
+  -webkit-box-sizing: $type
+  -moz-box-sizing: $type  
+  box-sizing: $type
+
+@mixin boxShadow($shadow)
+  -webkit-box-shadow: $shadow
+  -moz-box-shadow: $shadow
+  box-shadow: $shadow
+
+
+
+@import url(http://fonts.googleapis.com/css?family=Ubuntu)
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans)
+
+$font: "Helvetica Neue"
+$color-base:  lighten(rgb(150, 180, 230), 20%)
+//$color-base:  lighten(rgb(196, 169, 125), 20%)
+$context: 320px
+  
+
+#wrapper
+  width: 100%
+  font-size: 0.9em
+  line-height: 1.1em
+  font-family: $font
+  background-color: darken($color-base, 5%)
+
+.minihead
+  font:
+    weight: bold
+    size: 1.2em
+  line-height: 1.5em
+  color: rgba(#000,0.7)
+
+
+#header
+  text-align: center
+  font-size: 1.5em
+  padding: 0.8em 0px
+  @include gradientBackground($color-base, darken($color-base, 15%))
+  @include boxShadow(0px 3px 8px rgba(#000, 0.3))
+  position: relative
+
+
+#main
+  width: auto
+
+#content
+  background-color: $color-base
+  margin: 0 0 10px 0
+  padding: 8px
+  @include boxShadow(0px 3px 10px rgba(#000, 0.3))
+
+  .title
+    text-align: center
+    font-size: 1.4em
+    margin-bottom: 10px
+    @extend .minihead
+  .container
+    width: auto
+    height: auto
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2)
+    padding-bottom: 1em
+    .pic
+      width: 50%
+      display: inline-block
+      height: inherit
+      img
+        width: 100%
+        background-color: #000
+        border-radius: 16px
+    .info
+      @include boxSizing
+      display: inline-block
+      width: 48%
+      padding: 0 2%
+      text-align: left
+      overflow: scroll
+      vertical-align: top
+      height: 8em
+      @media (min-width: 450px)
+        height: inherit
+
+  .description
+    margin: 0.5em 0
+
+#comments
+  .minihead
+    margin: 10px 0 10px 10px
+  .container
+    padding: 8px
+    background-color: white
+    margin: 10px
+    border-radius: 10px
+    background-color: rgba(white, 0.5)
+    @include boxShadow(0px 3px 8px rgba(#000, 0.3))
+  %column
+    display: inline-block
+    vertical-align: top
+  .column-one
+    @extend %column
+    width: 20%
+    img
+      margin-top: 10px
+      width: 20%
+      float: left
+  .column-two
+    @extend %column
+    width: 74%
+    border-left: 1px solid rgba(#000,0.3)
+    padding-left: 10px
+    font-size: 0.8em
+
+  
+
+
+
+#footer
+  padding-bottom: 10px
+  .container
+    padding: 8px
+    background-color: white
+    margin: 10px
+    border-radius: 10px
+    background-color: rgba(white, 0.5)
+    @include boxShadow(0px 3px 8px rgba(#000, 0.3))
+    .btn
+      width: 25%
+      text-align: center
+      padding: 10px
+      @include gradientBackground($color-base, darken($color-base, 15%))
+      border-radius: 8px
+      @include boxShadow(1px 2px 1px rgba(#000, 0.3))
+      margin-left: 65%
+
+
+
+
+
+
+  
+
+
+
+

@@ -100,12 +100,36 @@ Route::delete('/likes/delete', array('uses' => 'likes@destroy'));
 Route::delete('/comments/delete', array('uses' => 'comments@destroy'));
 
 // API
-Route::get('API/wines.json', array('uses' => 'api@wines'));
+Route::get('API/wines', array('uses' => 'api@wines'));
+Route::get('API/wine/(:any)', array('uses' => 'api@wine'));
+
 Route::get('API/information.json', array('uses' => 'api@information'));
 Route::get('API/likes', array('uses' => 'api@likes'));
 Route::get('API/likes/(:any)', array('uses' => 'api@like'));
-Route::post('API/register', array('uses' => 'api@register'));
-Route::post('API/login', array('uses' => 'api@login'));
+	
+	// User
+	Route::post('API/register', array('uses' => 'api@register'));
+	Route::post('API/login', array('uses' => 'api@login'));
+	Route::get('API/check', array('uses' => 'api@check'));
+	
+	// Comments
+		// Esta ruta tiene 2 wildcards, el tipo de item, y el identificador del item
+	Route::get('API/comments/(:any)/(:any)', function($type, $id){
+
+		return Response::eloquent(Comment::where($type.'_id', '=', $id)->get());	
+
+	});
+	Route::post('API/comments/(:any)/(:any)', function($type, $id){
+
+		Comment::create(array(
+			$type.'_id' => $id,
+			'name' => Input::get('name'),
+			'comment' => Input::get('comment'),
+			'rating' => Input::get('rating')
+		));
+	});
+	
+
 
 
 
