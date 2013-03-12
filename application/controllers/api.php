@@ -9,13 +9,24 @@ class Api_Controller extends Base_Controller {
 		return Response::eloquent(Wine::all());
 
 	}
-
+	// Wine get
 	public function get_wine($id){
 
 		return Response::eloquent(Wine::find($id));
 
 	}
+	// Gin get
+	public function get_gin($id){
 
+		return Response::eloquent(Gin::find($id));
+
+	}
+	// Pincho get
+	public function get_pincho($id){
+
+		return Response::eloquent(Pincho::find($id));
+
+	}
 
 	public function get_information(){
 

@@ -7,6 +7,7 @@
 			<header>
 				<hgroup>
 					<h1>{{ $ele->title }}</h1>
+
 					<h2>{{ Comment::find($ele->id)->user()->first()->username }}</h2>
 					<h3>
 						<?php 

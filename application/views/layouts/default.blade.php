@@ -12,6 +12,7 @@
 	{{ HTML::script('js/bootstrap.js') }}
 </head>
 <body id="wrap">
+	
 <!-- BEGIN NAVIGATION -->		
 	<nav id="primary">
 		<ul>

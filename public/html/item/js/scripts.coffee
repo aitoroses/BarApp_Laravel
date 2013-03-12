@@ -60,66 +60,83 @@ $(document).ready ->
   
   ### Execution ###
 
-  # Getting data model for wine
+  ### Initialization ###
 
-  Wine = Backbone.Model.extend
-    urlRoot: '/laravel/public/API/wine'
-    defaults:
-      name: 'Empty title..'
-      description: 'Empty description...'
-      rating: 'Empty rating..'
-      category: 'Empty category..'
-      price: 'Empty price..'
-
-  wine = new Wine id:1
-  wine.on "change", (model) -> 
-      $('.title').text(model.get('name'))
-      $('.description p').text(model.get('description'))
-  wine.fetch()
+  window.core = 
+    id: 1           # USE THIS INDEX FOR GET MODEL (default)
+    product: 'wine' # USE THIS TYPE OF PRODUCT (default)
+    setId: (id) ->
+      @id = id
+    setProduct: (product) ->
+      @product = product
+    initialize: -> # CALL THIS FUNCTION TO LOAD PAGE
 
 
+      # Getting data model for Product(Wine this case)
 
+      Item = Backbone.Model.extend
+        urlRoot: "/laravel/public/API/#{core.product}"
+        defaults:
+          name: 'Empty title..'
+          description: 'Empty description...'
+          rating: 'Empty rating..'
+          category: 'Empty category..'
+          price: 'Empty price..'
 
-  # Getting Coments
-  commentList = new CommentList()
-  commentList.setItem('wine',1)
-  commentListView = new CommentListView({collection: commentList})
-  commentList.fetch()
-  $('#comments').append(commentListView.el)
+      item = new Item id: core.id
+      item.on "change", (model) ->
+        $('#header h1').text(core.product) 
+        $('.title').text(model.get('name'))
+        $('.info .category').text(model.get('category'))
+        $('.info .price').text(model.get('price')+'€')
+        $('.description p').text(model.get('description'))
+        $('.pic img').attr('src', "/laravel/public/img/#{core.product}s/" + model.get('picture'))
+      item.fetch()
 
-  # Comment Textarea Controller
-  $.ajax
-    type: 'GET'
-    url: '../../API/check'
-    success: (data) ->
-      $('#user').val(data.username)
-    error: ->
-      $('#footer textarea, #footer .btn , #footer .rating').hide()
-      $('#footer h1').text('Registrate para comentar')
-  
-  # Rating set
-    $('.rating div').click ->
-      $('.rating .active').removeClass('active')
-      $(@).addClass('active')
-  
-  # Comment add
-  
-  $('#footer .btn').click ->
-    if ($('.active').length) > 0 and $('#textarea').val().length > 0
+      # Getting Coments
+      commentList = new CommentList()
+      commentList.setItem(@.product,core.id)
+      commentListView = new CommentListView({collection: commentList})
+      commentList.fetch()
+      $('#comments').append(commentListView.el)
+
+      # Comment Textarea Controller
       $.ajax
-        type: 'POST'
-        url: '../../API/comments/wine/1'
-        data:
-          name: $('#user').val()
-          comment: $('textarea').val()
-          rating: 2
-        success: ->
-          comment = new Comment
-            name: $('#user').val()
-            comment: $('textarea').val()
-            rating: $('.active').text()
-          commentList.add(comment)
-          $(textarea).val('')
-    else 
-      $('#footer h1').text('Elige una valoración')
+        type: 'GET'
+        url: '../../API/check'
+        success: (data) ->
+          $('#user').val(data.username)
+        error: ->
+          $('#footer textarea, #footer .btn , #footer .rating').hide()
+          $('#footer h1').text('Registrate para comentar')
+      
+      # Rating set
+        $('.rating div').click ->
+          $('.rating .active').removeClass('active')
+          $(@).addClass('active')
+      
+      # Comment add
+      
+      $('#footer .btn').click ->
+        if ($('.active').length) > 0 and $('#textarea').val().length > 0
+          $.ajax
+            type: 'POST'
+            url: "../../API/comments/#{@.product}/1"
+            data:
+              name: $('#user').val()
+              comment: $('textarea').val()
+              rating: $('.active').text()
+            success: ->
+              comment = new Comment
+                name: $('#user').val()
+                comment: $('textarea').val()
+                rating: $('.active').text()
+              commentList.add(comment)
+              $(textarea).val('')
+        else 
+          $('#footer h1').text('Elige una valoración')
   
+  data = $('body').data('item')
+  core.setProduct(data.product)
+  core.setId(data.id)  
+  core.initialize()  

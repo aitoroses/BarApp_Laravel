@@ -137,6 +137,24 @@ $context: 320px
       height: 8em
       @media (min-width: 450px)
         height: inherit
+      p 
+
+        line-height: 1.5em
+        font-weight: bold
+        color: rgba(#000,0.8)
+        font-variant: small-caps
+        text-decoration: underline overline
+        font-size: 1.2em
+        margin-top: 10px
+        .category
+          margin-top: 5px
+          display: block
+        .price
+          margin-left: 8px
+          font-size: 1.2em
+          text-decoration: none
+          
+
 
   .description
     margin: 0.5em 0
@@ -157,6 +175,7 @@ $context: 320px
   .column-one
     @extend %column
     width: 20%
+    overflow: scroll
     img
       margin-top: 10px
       width: 20%

@@ -5,7 +5,7 @@
     /* Helper functions
     */
 
-    var Comment, CommentList, CommentListView, CommentView, Wine, commentList, commentListView, wine;
+    var Comment, CommentList, CommentListView, CommentView, data;
     window.templateEscape = function(str) {
       str = str.replace(/&lt;/g, "<");
       return str = str.replace(/&gt;/g, ">");
@@ -82,70 +82,94 @@
     /* Execution
     */
 
-    Wine = Backbone.Model.extend({
-      urlRoot: '/laravel/public/API/wine',
-      defaults: {
-        name: 'Empty title..',
-        description: 'Empty description...',
-        rating: 'Empty rating..',
-        category: 'Empty category..',
-        price: 'Empty price..'
-      }
-    });
-    wine = new Wine({
-      id: 1
-    });
-    wine.on("change", function(model) {
-      $('.title').text(model.get('name'));
-      return $('.description p').text(model.get('description'));
-    });
-    wine.fetch();
-    commentList = new CommentList();
-    commentList.setItem('wine', 1);
-    commentListView = new CommentListView({
-      collection: commentList
-    });
-    commentList.fetch();
-    $('#comments').append(commentListView.el);
-    $.ajax({
-      type: 'GET',
-      url: '../../API/check',
-      success: function(data) {
-        return $('#user').val(data.username);
+    /* Initialization
+    */
+
+    window.core = {
+      id: 1,
+      product: 'wine',
+      setId: function(id) {
+        return this.id = id;
       },
-      error: function() {
-        $('#footer textarea, #footer .btn , #footer .rating').hide();
-        return $('#footer h1').text('Registrate para comentar');
-      }
-    }, $('.rating div').click(function() {
-      $('.rating .active').removeClass('active');
-      return $(this).addClass('active');
-    }));
-    return $('#footer .btn').click(function() {
-      if (($('.active').length) > 0 && $('#textarea').val().length > 0) {
-        return $.ajax({
-          type: 'POST',
-          url: '../../API/comments/wine/1',
-          data: {
-            name: $('#user').val(),
-            comment: $('textarea').val(),
-            rating: 2
-          },
-          success: function() {
-            var comment;
-            comment = new Comment({
-              name: $('#user').val(),
-              comment: $('textarea').val(),
-              rating: $('.active').text()
-            });
-            commentList.add(comment);
-            return $(textarea).val('');
+      setProduct: function(product) {
+        return this.product = product;
+      },
+      initialize: function() {
+        var Item, commentList, commentListView, item;
+        Item = Backbone.Model.extend({
+          urlRoot: "/laravel/public/API/" + core.product,
+          defaults: {
+            name: 'Empty title..',
+            description: 'Empty description...',
+            rating: 'Empty rating..',
+            category: 'Empty category..',
+            price: 'Empty price..'
           }
         });
-      } else {
-        return $('#footer h1').text('Elige una valoración');
+        item = new Item({
+          id: core.id
+        });
+        item.on("change", function(model) {
+          $('#header h1').text(core.product);
+          $('.title').text(model.get('name'));
+          $('.info .category').text(model.get('category'));
+          $('.info .price').text(model.get('price') + '€');
+          $('.description p').text(model.get('description'));
+          return $('.pic img').attr('src', ("/laravel/public/img/" + core.product + "s/") + model.get('picture'));
+        });
+        item.fetch();
+        commentList = new CommentList();
+        commentList.setItem(this.product, core.id);
+        commentListView = new CommentListView({
+          collection: commentList
+        });
+        commentList.fetch();
+        $('#comments').append(commentListView.el);
+        $.ajax({
+          type: 'GET',
+          url: '../../API/check',
+          success: function(data) {
+            return $('#user').val(data.username);
+          },
+          error: function() {
+            $('#footer textarea, #footer .btn , #footer .rating').hide();
+            return $('#footer h1').text('Registrate para comentar');
+          }
+        }, $('.rating div').click(function() {
+          $('.rating .active').removeClass('active');
+          return $(this).addClass('active');
+        }));
+        return $('#footer .btn').click(function() {
+          if (($('.active').length) > 0 && $('#textarea').val().length > 0) {
+            return $.ajax({
+              type: 'POST',
+              url: "../../API/comments/" + this.product + "/1",
+              data: {
+                name: $('#user').val(),
+                comment: $('textarea').val(),
+                rating: $('.active').text()
+              },
+              success: function() {
+                var comment;
+                comment = new Comment({
+                  name: $('#user').val(),
+                  comment: $('textarea').val(),
+                  rating: $('.active').text()
+                });
+                commentList.add(comment);
+                return $(textarea).val('');
+              }
+            });
+          } else {
+            return $('#footer h1').text('Elige una valoración');
+          }
+        });
       }
-    });
+    };
+    data = $('body').data('item');
+    core.setProduct(data.product);
+    core.setId(data.id);
+    return core.initialize();
   });
 
 }).call(this);

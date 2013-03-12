@@ -102,6 +102,8 @@ Route::delete('/comments/delete', array('uses' => 'comments@destroy'));
 // API
 Route::get('API/wines', array('uses' => 'api@wines'));
 Route::get('API/wine/(:any)', array('uses' => 'api@wine'));
+Route::get('API/gin/(:any)', array('uses' => 'api@gin'));
+Route::get('API/pincho/(:any)', array('uses' => 'api@pincho'));
 
 Route::get('API/information.json', array('uses' => 'api@information'));
 Route::get('API/likes', array('uses' => 'api@likes'));
@@ -121,13 +123,20 @@ Route::get('API/likes/(:any)', array('uses' => 'api@like'));
 	});
 	Route::post('API/comments/(:any)/(:any)', function($type, $id){
 
+		$user = Auth::user();
 		Comment::create(array(
 			$type.'_id' => $id,
+			'user_id' => $user->id,
 			'name' => Input::get('name'),
 			'comment' => Input::get('comment'),
 			'rating' => Input::get('rating')
 		));
 	});
+
+
+// APPLICATION ROUTES
+
+Route::get('application/(:any)/(:any)', array('uses' => 'application@product'));
 	
 
 
