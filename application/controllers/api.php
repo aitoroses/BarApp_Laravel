@@ -90,19 +90,7 @@ class Api_Controller extends Base_Controller {
 
 	public function post_login(){
 
-		/*$user = Input::get('user');
-		$username = $user['username'];
-		$password = $user['password'];
-
-		$find = User::where_username($username)->first();
-
-		if(Hash::check($password, $find->password)){
-			return "valid";
-
-		} else {
-			return Response::error('500');
-		}
-		*/
+		$user = Input::get('user');
 
 		$username = $user['username'];
 		$password = $user['password'];
@@ -110,7 +98,7 @@ class Api_Controller extends Base_Controller {
 		$credentials = array('username' => $username, 'password' => $password);
 
 		if (Auth::attempt($credentials)){
-			return Response::eloquent(Auth::user());
+			return "Bienvenido a Mô!";
 		} else {
 			return Response::error('500');
 		}
@@ -124,6 +112,12 @@ class Api_Controller extends Base_Controller {
 		else{
 			return Response::error('500');
 		}
+
+	}
+	public function post_logout(){
+
+		Auth::logout();
+		return "Has salido de la zona VIP de Mô.";
 
 	}
 

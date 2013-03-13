@@ -13,7 +13,7 @@ class Comments_Controller extends Base_Controller{
 			return true;
 		
 		} else {
-			return false;
+			Response::error('500');
 		}
 		
 

@@ -32,6 +32,7 @@
 |
 */
 
+
 Route::get('/', array('as' => 'login', 'uses' => 'login@index'));
 Route::get('/logout', array('as' => 'logout', 'uses' => 'login@logout'));
 Route::post('/verify', array('as' => 'verify', 'uses' => 'login@verify'));
@@ -113,6 +114,8 @@ Route::get('API/likes/(:any)', array('uses' => 'api@like'));
 	Route::post('API/register', array('uses' => 'api@register'));
 	Route::post('API/login', array('uses' => 'api@login'));
 	Route::get('API/check', array('uses' => 'api@check'));
+	Route::post('API/logout', array('uses' => 'api@logout'));
+
 	
 	// Comments
 		// Esta ruta tiene 2 wildcards, el tipo de item, y el identificador del item
@@ -138,11 +141,6 @@ Route::get('API/likes/(:any)', array('uses' => 'api@like'));
 
 Route::get('application/(:any)/(:any)', array('uses' => 'application@product'));
 	
-
-
-
-
-
 
 /*
 |--------------------------------------------------------------------------

@@ -11,11 +11,11 @@
 	{{ HTML::style('item/css/style.css') }}
 
 </head>
-<body data-item='{"product": "{{$product}}", "id": "{{$id}}"}'>
+<body data-item='{"product": "{{$product}}", "id": "{{$id}}"}' >
 	
 	<div id="wrapper">
 		
-		<header id="header">
+		<header id="header" style="display:none">
 			<h1>Header</h1>
 		</header>
 		<section id="main">
